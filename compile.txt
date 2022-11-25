@@ -1,1 +1,3 @@
 javac src/Main.java src/utils/Coords.java src/sim/Animal.java src/sim/Arena.java src/sim/Eater.java src/sim/Edible.java src/sim/Entity.java src/sim/Hog.java src/sim/Melon.java src/sim/Plant.java 
+
+...
