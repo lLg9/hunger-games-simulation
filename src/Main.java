@@ -11,7 +11,8 @@ public class Main extends Object {
         System.out.println("CMD simulation demo");
 
         Simulation theSimulation = Simulation.getInstance();
-        
+        theSimulation.initSimulationFromCode();
+        theSimulation.run();
     }
 
 }
