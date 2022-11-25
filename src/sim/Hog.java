@@ -33,4 +33,10 @@ public class Hog extends Animal implements Eater{
     {
         System.out.println("TODO: implement Hog::eat()");
     }
+
+    @Override
+    public char displaySymbol(){
+        return '@';
+    }
+
 }

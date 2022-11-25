@@ -5,7 +5,7 @@ import utils.Coords;
 public class Melon extends Plant {
 
     //private fields
-    
+
     private int size;
 
     //constructors
@@ -38,6 +38,12 @@ public class Melon extends Plant {
     public void nextTick() {
         this.size += 1;
     }
+
+    @Override
+    public char displaySymbol(){
+        return '*';
+    }
+
 
     public int getSize() {
         return size;

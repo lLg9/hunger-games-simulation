@@ -25,9 +25,10 @@ public abstract class Entity {
     public final int id;
 
     //public methods
-    
+
     public Coords getPosition() { return this.position; }
 
     public abstract String displayName();
+    public abstract char displaySymbol();
     public abstract void nextTick();
 }
