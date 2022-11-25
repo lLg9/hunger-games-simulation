@@ -1,17 +1,24 @@
 package utils;
 
 public class Coords {
-    public final int x;
-    public final int y;
+
+    //public fields
+    public int x;
+    public int y;
+
+    //constructor
 
     public Coords(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    //public methods
+
     public double distanceSq(Coords other) {
-        return 10;
+        return Math.pow(this.x-other.x, 2) + Math.pow(this.y-other.y, 2);
     }
+
     public double distance(Coords other) {
         return Math.sqrt(this.distanceSq(other));
     }

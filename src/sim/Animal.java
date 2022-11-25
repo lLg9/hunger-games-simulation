@@ -51,12 +51,22 @@ public abstract class Animal extends Entity implements Eater {
             }
 
         }
-        if (foodSourceTarget == null) {
+        if (foodSourceTarget != null) {
             this.moveTowards(((Entity)foodSourceTarget).getPosition());
         }
     }
 
     private void moveTowards(Coords c){
         System.out.println("TODO: implement Animal::moveTowards()");
+
+        if (this.position.x < c.x)
+            this.position.x += 1;
+        else if (this.position.x > c.x)
+            this.position.x -= 1;
+
+        if (this.position.y < c.y)
+            this.position.y += 1;
+        else if (this.position.y > c.y)
+            this.position.y -= 1;
     }
 }
