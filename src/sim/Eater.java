@@ -1,5 +1,5 @@
 package sim;
 
 public interface Eater {
-    eats();
+    void eats();
 }

@@ -4,9 +4,9 @@ import utils.Coords;
 
 import java.util.TreeMap;
 
-public class Hog extends Animal {
+public class Hog extends Animal implements Eater{
 
-    public static final TreeMap<Edible, Runnable> = new TreeMap<>();
+    public static final TreeMap<Edible, Runnable> treeMap = new TreeMap<>();
 
 
     public Hog(Coords position, Arena arena) {
@@ -30,7 +30,7 @@ public class Hog extends Animal {
                 continue;
             if (e instanceof Edible) {
                 if (foodSourceTarget == null ||
-                        ((Entity)foodSourceTarget).getPosition().distanceSq(this)
+                        ((Entity)foodSourceTarget).getPosition().distanceSq(this.getPosition())
                     > e.getPosition().distanceSq(this.getPosition()))
                     foodSourceTarget = (Edible)e;
             }
@@ -39,5 +39,11 @@ public class Hog extends Animal {
         if (foodSourceTarget == null) {
 
         }
+    }
+
+    @Override 
+    public void eats()
+    {
+        //do nothing... 
     }
 }

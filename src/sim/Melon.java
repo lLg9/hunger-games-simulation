@@ -1,12 +1,15 @@
 package sim;
 
+import utils.Coords;
+
 public class Melon extends Plant {
     private int size;
 
     public Melon() {
-        this(5);
+        this(new Coords(0,0), null, 5);
     }
-    public Melon(int initialSize) {
+    public Melon(Coords position, Arena arena, int initialSize) {
+        super(position, arena);
         this.size = initialSize;
     }
 
