@@ -1,9 +1,11 @@
 package sim;
 
+import java.util.Timer;
+
 public class Simulation {
+
+    //singleton pattern related members
     private static Simulation instance = null;
-  
-    private Arena arena;
   
     private Simulation()
     {
@@ -18,6 +20,11 @@ public class Simulation {
         return instance;
     }
 
+    //private fileds
+
+    private Arena arena;
+
+
     //public game methods
 
     public void initSimulationFromCode(){
@@ -31,9 +38,22 @@ public class Simulation {
 
     }
 
-    public void run(){
+    public void launchSimulation(){
         //TODO: implement with a timer, call nextTick on Arena on each tick, and print the current state of the arena
         System.out.println("TODO: implement Simulation::run()");
+
+        Timer t = new java.util.Timer();
+        t .schedule( 
+            new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    arena.nextTick();
+                    arena.printArena();
+                    t.cancel(); 
+                }
+            }, 
+            1000
+        ); 
     }
 
 }

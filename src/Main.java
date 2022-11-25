@@ -12,7 +12,7 @@ public class Main extends Object {
 
         Simulation theSimulation = Simulation.getInstance();
         theSimulation.initSimulationFromCode();
-        theSimulation.run();
+        theSimulation.launchSimulation();
     }
 
 }
