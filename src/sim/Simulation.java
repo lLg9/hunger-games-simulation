@@ -1,6 +1,6 @@
 package sim;
 
-class Simulation {
+public class Simulation {
     private static Simulation instance = null;
   
     private Arena arena;
