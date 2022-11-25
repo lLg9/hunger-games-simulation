@@ -5,10 +5,12 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Arena {
-    //fields
+    //private fields
+
     private final TreeSet<Entity> entities;
 
-    //methods
+    //public methods
+
     public Arena() {
         entities = new TreeSet<Entity>();
     }
@@ -37,6 +39,5 @@ public class Arena {
         //TODO: implement
         System.out.println("TODO: implement Simulation::printArena()");
     }
-
 
 }

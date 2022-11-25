@@ -3,15 +3,23 @@ package sim;
 import utils.Coords;
 
 public class Melon extends Plant {
+
+    //private fields
+    
     private int size;
+
+    //constructors
 
     public Melon() {
         this(new Coords(0,0), null, 5);
     }
+
     public Melon(Coords position, Arena arena, int initialSize) {
         super(position, arena);
         this.size = initialSize;
     }
+
+    //puclic methods
 
     @Override
     public void getEatenBy(Eater e) {

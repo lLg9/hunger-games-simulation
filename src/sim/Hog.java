@@ -6,12 +6,17 @@ import java.util.TreeMap;
 
 public class Hog extends Animal implements Eater{
 
-    public static final TreeMap<Edible, Runnable> treeMap = new TreeMap<>();
+    //public fields
+    //TODO: implement different behavior for each Edible
+    //public static final TreeMap<Edible, Runnable> treeMap = new TreeMap<>();
 
+    //constructor
 
     public Hog(Coords position, Arena arena) {
         super(position, arena, 15);
     }
+
+    //public methods
 
     @Override
     public String displayName() {
@@ -42,8 +47,8 @@ public class Hog extends Animal implements Eater{
     }
 
     @Override 
-    public void eats()
+    public void eat(Edible ed)
     {
-        //do nothing... 
+        System.out.println("TODO: implement Hog::eat()");
     }
 }

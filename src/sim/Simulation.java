@@ -5,6 +5,7 @@ import java.util.Timer;
 public class Simulation {
 
     //singleton pattern related members
+    
     private static Simulation instance = null;
   
     private Simulation()

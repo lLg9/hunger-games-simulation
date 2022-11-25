@@ -6,12 +6,14 @@ import java.util.ArrayList;
 
 public abstract class Entity {
 
-    //private&protected fields
+    //private & protected fields
+
     private static int lastId = 0;
     protected Arena arena;
     protected Coords position;
 
     //protected constructor
+
     protected Entity(Coords position, Arena arena) {
         this.id = ++Entity.lastId;
         this.position = position;
@@ -19,11 +21,13 @@ public abstract class Entity {
     }
 
     //public fileds
+
     public final int id;
 
     //public methods
-    public Coords getPosition() { return this.position; }
     
+    public Coords getPosition() { return this.position; }
+
     public abstract String displayName();
     public abstract void nextTick();
 }
