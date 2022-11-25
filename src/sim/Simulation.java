@@ -40,7 +40,7 @@ public class Simulation {
 
     public void launchSimulation(){
         //TODO: implement with a timer, call nextTick on Arena on each tick, and print the current state of the arena
-        System.out.println("TODO: implement Simulation::run()");
+        System.out.println("TODO: implement Simulation::launchSimulation()");
 
         Timer t = new java.util.Timer();
         t .schedule( 
@@ -49,9 +49,9 @@ public class Simulation {
                 public void run() {
                     arena.nextTick();
                     arena.printArena();
-                    t.cancel(); 
                 }
             }, 
+            1000,
             1000
         ); 
     }
