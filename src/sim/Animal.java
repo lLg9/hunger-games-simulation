@@ -33,12 +33,30 @@ public abstract class Animal extends Entity implements Eater {
     }
 
     //returns null is there is no food on the same coordinate
-    public Edible foodAtSameCoords(){
+    private Edible foodAtSameCoords(){
         System.out.println("TODO: implement Animal::foodAtSameCoords()");
         return null;
     }
 
-    public void moveTowardsNearestPlant(){
-        System.out.println("TODO: implement Animal::moveTowardsNearestPlant()");
+    private void moveTowardsNearestPlant(){
+
+        Edible foodSourceTarget = null;
+        for (Entity e : arena.getEntities()) {
+            // 25 = 2^2 because this is less computationally intensive
+            if (e instanceof Edible) {
+                if (foodSourceTarget == null ||
+                        ((Entity)foodSourceTarget).getPosition().distanceSq(this.getPosition())
+                    > e.getPosition().distanceSq(this.getPosition()))
+                    foodSourceTarget = (Edible)e;
+            }
+
+        }
+        if (foodSourceTarget == null) {
+            this.moveTowards(((Entity)foodSourceTarget).getPosition());
+        }
+    }
+
+    private void moveTowards(Coords c){
+        System.out.println("TODO: implement Animal::moveTowards()");
     }
 }

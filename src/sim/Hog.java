@@ -26,24 +26,6 @@ public class Hog extends Animal implements Eater{
     @Override
     public void nextTick() {
         super.nextTick();
-
-        // AI
-        Edible foodSourceTarget = null;
-        for (Entity e : arena.getEntities()) {
-            // 25 = 2^2 because this is less computationally intensive
-            if (this.getPosition().distanceSq(e.getPosition()) > 25)
-                continue;
-            if (e instanceof Edible) {
-                if (foodSourceTarget == null ||
-                        ((Entity)foodSourceTarget).getPosition().distanceSq(this.getPosition())
-                    > e.getPosition().distanceSq(this.getPosition()))
-                    foodSourceTarget = (Edible)e;
-            }
-
-        }
-        if (foodSourceTarget == null) {
-
-        }
     }
 
     @Override 
