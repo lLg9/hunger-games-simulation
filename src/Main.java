@@ -11,8 +11,16 @@ public class Main extends Object {
         System.out.println("CMD simulation demo");
 
         Simulation theSimulation = Simulation.getInstance();
-        theSimulation.initSimulationFromCode();
+        //theSimulation.initSimulationFromCode();
+        try{
+            theSimulation.initSimulationFromFile("infile.txt");
+        }
+        catch(Exception e){
+            System.out.println("I/O exception occurred...");
+        }
+
         theSimulation.launchSimulation();
+
     }
 
 }

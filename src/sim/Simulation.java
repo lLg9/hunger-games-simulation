@@ -2,6 +2,10 @@ package sim;
 
 import java.util.Timer;
 import utils.Coords;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class Simulation {
 
@@ -44,10 +48,25 @@ public class Simulation {
         arena.addEntity(new Melon(new Coords(2,19), arena, 2));
     }
 
-    public void initSimulationFromFile(String path){
+    public void initSimulationFromFile(String path) throws IOException {
     	//TODO: parse arena size and entities from the file, and add init the game accordingly
         System.out.println("TODO: implement initSimulationFromFile(String path()");
 
+        FileReader fr = new FileReader(path);
+        BufferedReader br = new BufferedReader(fr);
+
+        String[] firstLine = br.readLine().split(" ");
+
+        arena.setSize(Integer.parseInt(firstLine[0]));
+
+        int limit = Integer.parseInt(firstLine[1]);
+
+        for (int i = 0; i < limit; ++i){
+            String nextLine = br.readLine();
+            arena.addEntity(
+                EntityFactory.createEntity(nextLine, arena)
+            );
+        }
     }
 
     public void launchSimulation(){
