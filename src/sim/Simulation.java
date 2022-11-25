@@ -57,8 +57,8 @@ public class Simulation {
             new java.util.TimerTask() {
                 @Override
                 public void run() {
-                    arena.nextTick();
                     arena.printArena();
+                    arena.nextTick();
                 }
             }, 
             1000,

@@ -45,6 +45,8 @@ public class Arena {
 
     public void printArena(){
 
+        //TODO: clear the console before printing
+
         char [][] output = new char[size][size];
         for (int i = 0; i<size; i++)
             for (int j = 0; j<size; j++)
