@@ -1,24 +1,23 @@
 package sim;
 
 
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.ArrayList;
 
 public class Arena {
     //private fields
 
-    private final TreeSet<Entity> entities;
+    private final ArrayList<Entity> entities;
     private int size;
 
     //public methods
 
     public Arena() {
-        entities = new TreeSet<Entity>();
+        entities = new ArrayList<Entity>();
     }
 
     //public methods realted to entity
 
-    public Set<Entity> getEntities() {
+    public ArrayList<Entity> getEntities() {
         // TODO: megelőzni a kiszivárogtatást
         return entities;
     }
@@ -45,8 +44,6 @@ public class Arena {
     }
 
     public void printArena(){
-        //TODO: implement
-        System.out.println("TODO: implement Simulation::printArena()");
 
         char [][] output = new char[size][size];
         for (int i = 0; i<size; i++)
@@ -58,8 +55,12 @@ public class Arena {
         }
 
         for (int i = 0; i<size; i++)
+        {
             for (int j = 0; j<size; j++)
+            {
                 System.out.print(Character.toString(output[i][j]));
-            System.out.println("");
+            }
+            System.out.print("\n");
+        }
     }
 }

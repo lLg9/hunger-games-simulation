@@ -1,11 +1,12 @@
 package sim;
 
 import java.util.Timer;
+import utils.Coords;
 
 public class Simulation {
 
     //singleton pattern related members
-    
+
     private static Simulation instance = null;
   
     private Simulation()
@@ -31,6 +32,16 @@ public class Simulation {
     public void initSimulationFromCode(){
     	//TODO: set arena size, and add entities to the arena from code
         System.out.println("TODO: implement initSimulationFromCode()");
+
+        arena.setSize(20);
+        arena.addEntity(new Hog(new Coords(3,3), arena));
+        arena.addEntity(new Hog(new Coords(5,13), arena));
+        arena.addEntity(new Hog(new Coords(14,15), arena));
+        arena.addEntity(new Melon(new Coords(9,9), arena, 2));
+        arena.addEntity(new Melon(new Coords(17,18), arena, 2));
+        arena.addEntity(new Melon(new Coords(0,0), arena, 2));
+        arena.addEntity(new Melon(new Coords(3,11), arena, 2));
+        arena.addEntity(new Melon(new Coords(2,19), arena, 2));
     }
 
     public void initSimulationFromFile(String path){
@@ -40,8 +51,6 @@ public class Simulation {
     }
 
     public void launchSimulation(){
-        //TODO: implement with a timer, call nextTick on Arena on each tick, and print the current state of the arena
-        System.out.println("TODO: implement Simulation::launchSimulation()");
 
         Timer t = new java.util.Timer();
         t .schedule( 
